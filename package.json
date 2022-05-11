@@ -1,7 +1,7 @@
 {
 	"name": "ob-w-kbd",
-	"version": "0.0.1",
-	"description": "Obsidian's workaround plugin of CJK keyboard issue.",
+	"version": "0.0.2",
+	"description": "Just a workaround plugin, for the Obsidian's issue about CJK IMEs.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",

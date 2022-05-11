@@ -1,55 +1,78 @@
-/* Sets all the text color to red! */
-/* body {
-    color: red;
-} */
-
 .workaround-keyboard {
-    display: flex;
-    /* position: absolute; */
-    bottom:0;
-    left:0;
-    /* right:50vw; */
-    background-color: rgba(0.4,0.4,0.4,0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+	display: flex;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0.4, 0.4, 0.4, 0.2);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	z-index: 1;
 }
 
 .workaround-keyboard textarea,
-.workaround-keyboard input[type=text]{
-    flex-grow: 1;
-    box-sizing: content-box;
-    height:var(--font-text-size);
-    margin:4px;
-    padding:2px;
-    overflow: auto;
+.workaround-keyboard input[type=text] {
+	flex-grow: 1;
+	box-sizing: content-box;
+	height: var(--font-text-size);
+	margin: 4px;
+	padding: 2px;
+	overflow: auto;
 }
+
 .workaround-keyboard-popup {
-    display: block;
-    position: absolute;
-    /* background-color: rgba(0.4,0.4,0.4,0.2); */
-    font-size:var(--font-text-size);
-    font-family: var(--font-text);
-    /* white-space: pre-wrap; */
-    white-space: pre-wrap;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-    margin:0;
-    padding:0;
-    line-height: 1.4;
+	display: block;
+	position: absolute;
+	font-size: var(--font-text-size);
+	font-family: var(--font-text);
+	/* white-space: pre-wrap; */
+	white-space: pre-wrap;
+	word-break: break-word;
+	overflow-wrap: anywhere;
+	margin: 0;
+	padding: 0;
+	z-index: 0;
+	/*line-height: 1.4;*/
+	/* for debug */
+	/*background: rgba(0, 255, 255, 0.2);*/
 }
+
 .workaround-keyboard-popup .spacer {
-    display: inline-block;
-    
+	display: inline-block;
+	/* for debug */
+	/*background: rgba(255, 0, 0, 0.24);*/
 }
+
 .workaround-keyboard-popup .preview {
-    backdrop-filter: blur(5px);
-    color:var(--text-accent);
-    border-left:1px dashed var(--background-primary);
-    background-color: var(--background-primary);
-    white-space: pre-wrap;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-    text-decoration: underline;
-    line-height: 1.4;
-    
+	backdrop-filter: blur(5px);
+	color: var(--text-accent);
+	/*border-left: 1px dashed var(--background-primary);*/
+	background-color: var(--background-secondary);
+	white-space: pre-wrap;
+	word-break: break-word;
+	overflow-wrap: anywhere;
+	text-decoration: underline;
+	/*line-height: 1.4;*/
+	/* for debug */
+	/*background: rgba(0, 162, 108, 0.26);*/
+
+}
+
+.workaround-keyboard-popup .preview::before {
+	content: "";
+	position: relative;
+	/*left: -1px;*/
+	left: -1px;
+	margin-right: -1px;
+	height: var(--font-text-size);
+	border-right: 1px solid var(--interactive-accent);
+	animation: flash 1s ease-in-out infinite;
+}
+
+@keyframes flash {
+	0%, 100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
 }
