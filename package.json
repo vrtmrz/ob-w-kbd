@@ -1,6 +1,6 @@
 {
 	"name": "ob-w-kbd",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Just a workaround plugin, for the Obsidian's issue about CJK IMEs.",
 	"main": "main.js",
 	"scripts": {
