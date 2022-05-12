@@ -30,6 +30,7 @@
 	margin: 0;
 	padding: 0;
 	z-index: 0;
+	pointer-events: none;
 	/*line-height: 1.4;*/
 	/* for debug */
 	/*background: rgba(0, 255, 255, 0.2);*/
