@@ -82,13 +82,14 @@ export default class WorkaroundKeyboardPlugin extends Plugin {
 			toggleElement(this.popupElement, false);
 			toggleElement(this.textareaWrapper, false);
 			this.isTextAreaShowing = false;
+			if (this.editor != null) {
+				this.editor.focus();
+			}
 			this.unbindEditorAndView();
 		} else {
 			this.previewText();
 		}
-		if (this.editor != null) {
-			this.editor.focus();
-		}
+
 	}
 
 	previewText() {
